@@ -2438,3 +2438,145 @@ a {
     padding: 35px 16px;
   }
 }
+
+/* =========================
+   NEWS PAGE
+========================= */
+
+.news-page {
+  min-height: 70vh;
+  background: #fff;
+  padding: 100px 20px;
+}
+
+.news-page-inner {
+  width: min(1000px, 100%);
+  margin: 0 auto;
+}
+
+.news-page-heading {
+  margin-bottom: 60px;
+}
+
+.news-page-heading p {
+  margin: 0 0 15px;
+  color: #7c9f32;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.news-page-heading h1 {
+  margin: 0;
+  color: #111;
+  font-size: clamp(50px, 8vw, 90px);
+  line-height: 1;
+  font-weight: 900;
+}
+
+.news-page-heading span {
+  display: block;
+  margin-top: 20px;
+  color: #777;
+  font-size: 14px;
+}
+
+
+/* ニュース一覧 */
+
+.news-page-list {
+  border-top: 1px solid #ddd;
+}
+
+.news-page-item {
+  display: grid;
+  grid-template-columns: 160px 1fr 40px;
+  align-items: center;
+
+  min-height: 100px;
+  padding: 20px 10px;
+
+  border-bottom: 1px solid #ddd;
+
+  color: #111;
+  text-decoration: none;
+
+  transition: 0.2s;
+}
+
+.news-page-item time {
+  color: #7c9f32;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.news-page-item span {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.news-page-item b {
+  font-size: 20px;
+  text-align: right;
+}
+
+.news-page-item:hover {
+  padding-left: 20px;
+  background: #f5f7ef;
+}
+
+
+/* ニュース0件 */
+
+.news-empty {
+  padding: 70px 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.news-empty p {
+  margin: 0;
+  color: #777;
+  font-size: 14px;
+}
+
+
+/* NEWS PAGE - SMARTPHONE */
+
+@media (max-width: 600px) {
+
+  .news-page {
+    padding: 70px 15px;
+  }
+
+  .news-page-heading {
+    margin-bottom: 40px;
+  }
+
+  .news-page-heading h1 {
+    font-size: 52px;
+  }
+
+  .news-page-item {
+    grid-template-columns: 1fr 25px;
+    gap: 8px;
+
+    min-height: 90px;
+    padding: 18px 5px;
+  }
+
+  .news-page-item time {
+    grid-column: 1;
+    font-size: 11px;
+  }
+
+  .news-page-item span {
+    grid-column: 1;
+    font-size: 14px;
+  }
+
+  .news-page-item b {
+    grid-column: 2;
+    grid-row: 1 / 3;
+  }
+
+}
