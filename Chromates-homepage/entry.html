@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>JOIN US | ChroMates</title>
+
+  <!-- 検索結果に表示させない -->
+  <meta name="robots" content="noindex, nofollow, noarchive">
+
+  <!-- ホームページと同じCSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body class="entry-page">
+
+  <!-- HEADER -->
+  <header class="entry-header-simple">
+
+    <a href="index.html" class="entry-logo">
+      <strong>ChroMates</strong>
+      <span>FUTSAL CIRCLE</span>
+    </a>
+
+    <a href="index.html" class="back-home">
+      ← BACK TO HOME
+    </a>
+
+  </header>
+
+
+  <!-- ENTRY -->
+  <main class="entry-main">
+
+    <div class="entry-intro">
+
+      <p class="entry-number">
+        JOIN ChroMates
+      </p>
+
+      <h1>
+        JOIN<br>
+        THE TEAM.
+      </h1>
+
+      <p class="entry-message">
+        一緒にフットサルを楽しみませんか？<br>
+        初心者・経験者どちらも大歓迎です。
+      </p>
+
+    </div>
+
+
+    <!-- FORM -->
+    <div class="entry-form-area">
+
+      <div class="entry-form-title">
+        <span>ENTRY FORM</span>
+        <p>必要事項を入力してください。</p>
+      </div>
+
+
+      
+    <form
+     name="entry"
+     method="POST"
+     action="/thanks.html"
+     data-netlify="true"
+     data-netlify-honeypot="bot-field"
+     class="entry-form"
+    >
+     <input type="hidden" name="form-name" value="entry">
+
+    <p style="display:none;">
+     <label>
+      入力しないでください
+      <input name="bot-field">
+     </label>
+    </p>
+
+        <!-- 名前 -->
+        <div class="form-group">
+
+          <label for="name">
+            名前
+            <span class="required">必須</span>
+          </label>
+
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="山田 太郎"
+            required
+          >
+
+        </div>
+
+
+        <!-- 大学 -->
+        <div class="form-group">
+
+          <label for="university">
+            大学
+            <span class="optional">任意</span>
+          </label>
+
+          <input
+            type="text"
+            id="university"
+            name="university"
+            placeholder="○○大学"
+          >
+
+        </div>
+
+
+        <!-- 年齢 -->
+        <div class="form-group">
+
+          <label for="age">
+            年齢
+            <span class="required">必須</span>
+          </label>
+
+         <select id="age" name="age" required>
+  <option value="">選択してください</option>
+  <option value="15">15歳</option>
+  <option value="16">16歳</option>
+  <option value="17">17歳</option>
+  <option value="18">18歳</option>
+  <option value="19">19歳</option>
+  <option value="20">20歳</option>
+  <option value="21">21歳</option>
+  <option value="22">22歳</option>
+  <option value="23">23歳</option>
+  <option value="24">24歳</option>
+  <option value="25">25歳</option>
+  <option value="26">26歳</option>
+  <option value="27">27歳</option>
+  <option value="28">28歳</option>
+  <option value="29">29歳</option>
+  <option value="30">30歳</option>
+  <option value="31">31歳</option>
+  <option value="32">32歳</option>
+  <option value="33">33歳</option>
+  <option value="34">34歳</option>
+  <option value="35">35歳</option>
+  <option value="36">36歳</option>
+  <option value="37">37歳</option>
+  <option value="38">38歳</option>
+  <option value="39">39歳</option>
+  <option value="40">40歳</option>
+  <option value="41">41歳</option>
+  <option value="42">42歳</option>
+  <option value="43">43歳</option>
+  <option value="44">44歳</option>
+  <option value="45">45歳</option>
+  <option value="46">46歳</option>
+  <option value="47">47歳</option>
+  <option value="48">48歳</option>
+  <option value="49">49歳</option>
+  <option value="50">50歳</option>
+  <option value="51">51歳</option>
+  <option value="52">52歳</option>
+  <option value="53">53歳</option>
+  <option value="54">54歳</option>
+  <option value="55">55歳</option>
+  <option value="56">56歳</option>
+  <option value="57">57歳</option>
+  <option value="58">58歳</option>
+  <option value="59">59歳</option>
+  <option value="60">60歳</option>
+</select>
+
+        </div>
+
+
+        <!-- メール -->
+        <div class="form-group">
+
+          <label for="email">
+            メールアドレス
+            <span class="required">必須</span>
+          </label>
+
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="example@email.com"
+            required
+          >
+
+        </div>
+
+
+        <button type="submit" class="entry-submit">
+          SEND ENTRY →
+        </button>
+
+      </form>
+
+    </div>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="entry-footer">
+
+    <p>© 2026 ChroMates</p>
+
+  </footer>
+
+  
+
+</body>
+</html>
