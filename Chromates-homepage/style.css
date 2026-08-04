@@ -2291,3 +2291,150 @@ a {
   font-size: 11px;
   font-weight: 800;
 }
+
+/* =========================
+   FINAL MOBILE ADJUSTMENT
+========================= */
+
+@media (max-width: 600px) {
+
+  /* ページ全体の横はみ出し防止 */
+  html,
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+
+  /* HERO */
+  .hero {
+    padding: 55px 25px 35px;
+  }
+
+  .hero-text h1 {
+    font-size: 48px;
+    line-height: 1;
+  }
+
+
+  /* ABOUT */
+  .about-section {
+    padding: 70px 15px 50px;
+    gap: 35px;
+  }
+
+  .about-content h2 {
+    font-size: 30px;
+    line-height: 1.45;
+    letter-spacing: -0.5px;
+  }
+
+  .about-description {
+    font-size: 13px;
+    line-height: 2;
+  }
+
+  .about-photo img {
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+
+  .about-photo::before {
+    right: -5px;
+  }
+
+
+  /* ABOUT STATS */
+  .about-stats {
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .about-stat {
+    padding: 20px 5px;
+  }
+
+  .about-stat strong {
+    font-size: 18px;
+  }
+
+
+  /* NEXT SCHEDULE */
+  .lower-block {
+    padding: 45px 18px;
+  }
+
+  .schedule-card {
+    grid-template-columns: 72px minmax(0, 1fr);
+    gap: 15px;
+  }
+
+  .schedule-info {
+    min-width: 0;
+  }
+
+  .schedule-info h3 {
+    font-size: 14px;
+  }
+
+
+  /* UNIFORM */
+  .uniform-image {
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  .uniform-info {
+    padding: 25px;
+  }
+
+  .uniform-info h3 {
+    font-size: 21px;
+  }
+
+
+  /* JOIN US */
+  .join-left {
+    padding: 50px 24px 55px;
+  }
+
+  .join-left h2 {
+    font-size: 44px;
+    line-height: 1.1;
+  }
+
+
+  /* CALENDAR */
+  .calendar-section {
+    padding: 0 14px;
+  }
+
+  .calendar-grid {
+    width: 100%;
+  }
+
+  .calendar-day {
+    min-width: 0;
+    min-height: 75px;
+    padding: 5px;
+  }
+
+  .calendar-event {
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+    padding: 4px 2px;
+  }
+
+  .calendar-event strong,
+  .calendar-event span {
+    font-size: 6px;
+  }
+
+
+  /* FOOTER */
+  .footer {
+    padding: 35px 16px;
+  }
+}
