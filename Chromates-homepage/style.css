@@ -2580,3 +2580,164 @@ a {
   }
 
 }
+
+/* =========================
+   NEWS ARTICLE PAGE
+========================= */
+
+.article-page {
+  min-height: 70vh;
+  padding: 90px 20px 110px;
+  background: #ffffff;
+}
+
+.article-inner {
+  width: min(900px, 100%);
+  margin: 0 auto;
+}
+
+
+/* 記事上部 */
+
+.article-header {
+  margin-bottom: 45px;
+}
+
+.article-back {
+  display: inline-block;
+  margin-bottom: 30px;
+
+  color: #789537;
+  text-decoration: none;
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.article-header time {
+  display: block;
+  margin-bottom: 15px;
+
+  color: #789537;
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.article-header h1 {
+  max-width: 800px;
+
+  margin: 0;
+
+  color: #111;
+
+  font-size: clamp(36px, 6vw, 62px);
+  line-height: 1.25;
+  letter-spacing: -1.5px;
+}
+
+
+/* メイン画像 */
+
+.article-image {
+  margin-bottom: 50px;
+}
+
+.article-image img {
+  width: 100%;
+  max-height: 560px;
+
+  object-fit: cover;
+
+  border-radius: 3px;
+}
+
+
+/* 本文 */
+
+.article-body {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.article-body p {
+  margin-bottom: 25px;
+
+  color: #444;
+
+  font-size: 15px;
+  line-height: 2;
+}
+
+
+/* 記事下部 */
+
+.article-bottom {
+  max-width: 760px;
+
+  margin: 60px auto 0;
+  padding-top: 30px;
+
+  border-top: 1px solid #e1e4dc;
+}
+
+.article-bottom a {
+  color: #789537;
+
+  text-decoration: none;
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.article-back:hover,
+.article-bottom a:hover {
+  color: #111;
+}
+
+
+/* =========================
+   NEWS ARTICLE MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .article-page {
+    padding: 65px 18px 80px;
+  }
+
+  .article-header {
+    margin-bottom: 30px;
+  }
+
+  .article-back {
+    margin-bottom: 22px;
+  }
+
+  .article-header h1 {
+    font-size: 34px;
+    line-height: 1.35;
+    letter-spacing: -0.5px;
+  }
+
+  .article-image {
+    margin-bottom: 35px;
+  }
+
+  .article-image img {
+    max-height: 320px;
+  }
+
+  .article-body p {
+    font-size: 14px;
+    line-height: 1.9;
+  }
+
+  .article-bottom {
+    margin-top: 45px;
+  }
+
+}
