@@ -87,6 +87,31 @@ if (calendarGrid) {
   const year = now.getFullYear();
   const month = now.getMonth();
 
+  const calendarMonth =
+  document.getElementById("calendar-month");
+
+const monthNamesFull = [
+  "JANUARY",
+  "FEBRUARY",
+  "MARCH",
+  "APRIL",
+  "MAY",
+  "JUNE",
+  "JULY",
+  "AUGUST",
+  "SEPTEMBER",
+  "OCTOBER",
+  "NOVEMBER",
+  "DECEMBER"
+];
+
+if (calendarMonth) {
+  calendarMonth.innerHTML = `
+    ${monthNamesFull[month]}
+    <span>${year}</span>
+  `;
+}
+
   const firstDay =
     new Date(year, month, 1);
 
