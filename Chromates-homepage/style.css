@@ -3338,3 +3338,190 @@ a {
   }
 
 }
+
+/* =========================
+   RESERVE PAGE
+========================= */
+
+.reserve-page {
+  min-height: 70vh;
+  padding: 80px 20px 110px;
+  background: #f6f8f2;
+}
+
+.reserve-inner {
+  width: min(900px, 100%);
+  margin: 0 auto;
+}
+
+.reserve-heading {
+  margin-bottom: 40px;
+}
+
+.reserve-heading p {
+  margin-bottom: 10px;
+
+  color: #789537;
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.reserve-heading h1 {
+  margin: 0;
+
+  font-size: clamp(42px, 7vw, 72px);
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+.reserve-heading span {
+  display: block;
+
+  margin-top: 15px;
+
+  color: #777;
+  font-size: 13px;
+}
+
+
+/* 商品表示 */
+
+.reserve-product {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+
+  gap: 28px;
+  align-items: center;
+
+  margin-bottom: 35px;
+  padding: 20px;
+
+  background: #fff;
+
+  border: 1px solid #e2e5dc;
+}
+
+.reserve-product img {
+  width: 170px;
+  aspect-ratio: 1 / 1;
+
+  object-fit: cover;
+}
+
+.reserve-product p {
+  margin-bottom: 5px;
+
+  color: #789537;
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.reserve-product h2 {
+  margin-bottom: 10px;
+
+  font-size: 22px;
+}
+
+.reserve-product strong {
+  font-size: 20px;
+}
+
+
+/* 予約フォーム */
+
+.reserve-form {
+  padding: 40px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 24px;
+
+  background: #fff;
+
+  border: 1px solid #e2e5dc;
+}
+
+.reserve-form textarea {
+  width: 100%;
+
+  padding: 14px 15px;
+
+  background: #fafbf8;
+
+  color: #222;
+
+  border: 1px solid #dfe3da;
+  border-radius: 2px;
+
+  font-family: inherit;
+  font-size: 14px;
+
+  resize: vertical;
+
+  outline: none;
+}
+
+.reserve-form textarea:focus {
+  background: #fff;
+  border-color: #789537;
+
+  box-shadow:
+    0 0 0 3px rgba(120, 149, 55, 0.08);
+}
+
+.reserve-note {
+  padding: 16px;
+
+  background: #f1f5e9;
+
+  color: #666;
+
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+
+/* =========================
+   RESERVE MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .reserve-page {
+    padding: 55px 15px 80px;
+  }
+
+  .reserve-heading h1 {
+    font-size: 43px;
+  }
+
+  .reserve-product {
+    grid-template-columns: 100px 1fr;
+
+    gap: 18px;
+
+    padding: 15px;
+  }
+
+  .reserve-product img {
+    width: 100px;
+  }
+
+  .reserve-product h2 {
+    font-size: 17px;
+  }
+
+  .reserve-product strong {
+    font-size: 17px;
+  }
+
+  .reserve-form {
+    padding: 28px 20px;
+  }
+
+}
