@@ -1,1 +1,201 @@
+<!DOCTYPE html>
+<html lang="ja">
 
+<head>
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>GALLERY | ChroMates</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+
+    <a href="index.html" class="site-logo">
+      <strong>ChroMates</strong>
+      <span>FUTSAL CIRCLE</span>
+    </a>
+
+    <nav class="nav">
+      <a href="index.html">HOME</a>
+      <a href="news.html">NEWS</a>
+      <a href="index.html#about">ABOUT</a>
+      <a href="index.html#schedule">SCHEDULE</a>
+      <a href="index.html#calendar">CALENDAR</a>
+      <a href="index.html#uniform">UNIFORM</a>
+      <a href="index.html#join">JOIN US</a>
+    </nav>
+
+  </header>
+
+
+  <!-- GALLERY PAGE -->
+  <main class="gallery-page">
+
+    <section class="gallery-page-inner">
+
+      <div class="gallery-page-heading">
+
+        <p>02 / GALLERY</p>
+
+        <h1>GALLERY</h1>
+
+        <span>
+          ChroMatesの活動記録
+        </span>
+
+      </div>
+
+
+      <!-- 写真はJavaScriptで自動表示 -->
+      <div
+        class="gallery-page-grid"
+        id="gallery-page-grid"
+      >
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- 写真拡大表示 -->
+  <div class="gallery-lightbox" id="gallery-lightbox">
+
+    <button
+      class="gallery-lightbox-close"
+      id="gallery-lightbox-close"
+      type="button"
+      aria-label="閉じる"
+    >
+      ×
+    </button>
+
+    <img
+      id="gallery-lightbox-image"
+      src=""
+      alt=""
+    >
+
+    <p id="gallery-lightbox-caption"></p>
+
+  </div>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <div class="footer-logo">
+      <strong>ChroMates</strong>
+      <span>FUTSAL CIRCLE</span>
+    </div>
+
+    <nav class="footer-nav">
+      <a href="index.html">HOME</a>
+      <a href="news.html">NEWS</a>
+      <a href="index.html#about">ABOUT</a>
+      <a href="index.html#schedule">SCHEDULE</a>
+      <a href="index.html#uniform">UNIFORM</a>
+      <a href="index.html#join">JOIN US</a>
+    </nav>
+
+    <p>
+      © 2026 ChroMates
+    </p>
+
+  </footer>
+
+
+  <script src="gallery-data.js"></script>
+
+  <script>
+    const galleryPageGrid =
+      document.getElementById("gallery-page-grid");
+
+    if (galleryData.length === 0) {
+
+      galleryPageGrid.innerHTML = `
+        <div class="gallery-empty">
+          <p>現在写真はありません。</p>
+        </div>
+      `;
+
+    } else {
+
+      galleryData.forEach(photo => {
+
+        const item = document.createElement("button");
+
+        item.className = "gallery-page-item";
+        item.type = "button";
+
+        item.innerHTML = `
+          <img
+            src="${photo.image}"
+            alt="${photo.alt}"
+          >
+
+          <div class="gallery-page-caption">
+            <span>${photo.date}</span>
+            <strong>${photo.title}</strong>
+          </div>
+        `;
+
+        item.addEventListener("click", function () {
+
+          document.getElementById(
+            "gallery-lightbox-image"
+          ).src = photo.image;
+
+          document.getElementById(
+            "gallery-lightbox-image"
+          ).alt = photo.alt;
+
+          document.getElementById(
+            "gallery-lightbox-caption"
+          ).textContent =
+            photo.title;
+
+          document.getElementById(
+            "gallery-lightbox"
+          ).classList.add("active");
+
+        });
+
+        galleryPageGrid.appendChild(item);
+
+      });
+
+    }
+
+
+    const lightbox =
+      document.getElementById("gallery-lightbox");
+
+    const closeButton =
+      document.getElementById("gallery-lightbox-close");
+
+
+    closeButton.addEventListener("click", function () {
+
+      lightbox.classList.remove("active");
+
+    });
+
+
+    lightbox.addEventListener("click", function (event) {
+
+      if (event.target === lightbox) {
+        lightbox.classList.remove("active");
+      }
+
+    });
+  </script>
+
+</body>
+</html>
