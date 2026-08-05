@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>PRODUCT | ChroMates</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="header">
+
+    <a href="index.html" class="site-logo">
+      <strong>ChroMates</strong>
+      <span>FUTSAL CIRCLE</span>
+    </a>
+
+    <nav class="nav">
+      <a href="index.html">HOME</a>
+      <a href="news.html">NEWS</a>
+      <a href="gallery.html">GALLERY</a>
+      <a href="index.html#about">ABOUT</a>
+      <a href="index.html#schedule">SCHEDULE</a>
+      <a href="shop.html">SHOP</a>
+      <a href="index.html#join">JOIN US</a>
+    </nav>
+
+  </header>
+
+
+  <main class="product-page">
+
+    <section class="product-inner">
+
+      <a href="shop.html" class="product-back">
+        ← BACK TO SHOP
+      </a>
+
+
+      <div class="product-layout">
+
+        <div class="product-image-area">
+
+          <img
+            id="product-image"
+            src=""
+            alt=""
+          >
+
+        </div>
+
+
+        <div class="product-info-area">
+
+          <p class="product-status" id="product-status">
+            PRE-ORDER
+          </p>
+
+          <p class="product-name-en" id="product-name-en">
+          </p>
+
+          <h1 id="product-name">
+          </h1>
+
+          <strong class="product-price" id="product-price">
+          </strong>
+
+
+          <div class="product-description">
+
+            <h2>ABOUT</h2>
+
+            <p>
+              ChroMatesオフィシャルグッズです。
+              こちらの商品は予約販売となります。
+            </p>
+
+            <p>
+              ご予約後、支払い方法・受け渡し方法について
+              ご連絡いたします。
+            </p>
+
+          </div>
+
+
+          <div class="product-order-info">
+
+            <div>
+              <span>販売方法</span>
+              <strong>予約販売</strong>
+            </div>
+
+            <div>
+              <span>お支払い</span>
+              <strong>予約後にご案内</strong>
+            </div>
+
+          </div>
+
+
+          <a
+            href="#"
+            class="reserve-button"
+            id="reserve-button"
+          >
+            RESERVE NOW →
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer class="footer">
+
+    <div class="footer-logo">
+      <strong>ChroMates</strong>
+      <span>FUTSAL CIRCLE</span>
+    </div>
+
+    <nav class="footer-nav">
+      <a href="index.html">HOME</a>
+      <a href="news.html">NEWS</a>
+      <a href="gallery.html">GALLERY</a>
+      <a href="shop.html">SHOP</a>
+      <a href="index.html#join">JOIN US</a>
+    </nav>
+
+    <p>© 2026 ChroMates</p>
+
+  </footer>
+
+
+  <script src="goods-data.js"></script>
+
+  <script>
+
+    const params =
+      new URLSearchParams(window.location.search);
+
+    const productId =
+      params.get("id");
+
+    const product =
+      goodsData.find(item => item.id === productId);
+
+
+    if (!product) {
+
+      window.location.href = "shop.html";
+
+    } else {
+
+      document.title =
+        `${product.jpName} | ChroMates`;
+
+      document.getElementById(
+        "product-image"
+      ).src = product.image;
+
+      document.getElementById(
+        "product-image"
+      ).alt = product.jpName;
+
+      document.getElementById(
+        "product-status"
+      ).textContent = product.status;
+
+      document.getElementById(
+        "product-name-en"
+      ).textContent = product.name;
+
+      document.getElementById(
+        "product-name"
+      ).textContent = product.jpName;
+
+      document.getElementById(
+        "product-price"
+      ).textContent = product.price;
+
+
+      document.getElementById(
+        "reserve-button"
+      ).href =
+        `reserve.html?product=${product.id}`;
+
+    }
+
+  </script>
+
+</body>
+</html>
