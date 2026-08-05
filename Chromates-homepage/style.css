@@ -3525,3 +3525,16 @@ a {
   }
 
 }
+
+.privacy-note {
+  margin-top: 10px;
+  color: #777;
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+@media (max-width: 600px) {
+  .privacy-note {
+    font-size: 10px;
+  }
+}
