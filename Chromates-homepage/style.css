@@ -4008,3 +4008,67 @@ a {
   }
 
 }
+
+/* =========================
+   JOIN INSTAGRAM
+========================= */
+
+.join-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  margin-top: 30px;
+}
+
+.join-instagram {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 16px 22px;
+
+  border: 1px solid currentColor;
+
+  color: inherit;
+
+  text-decoration: none;
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+
+  transition: 0.25s;
+}
+
+.join-instagram svg {
+  flex-shrink: 0;
+}
+
+.join-instagram:hover {
+  background: #111;
+  border-color: #111;
+  color: #fff;
+
+  transform: translateY(-2px);
+}
+
+
+/* スマホ */
+
+@media (max-width: 600px) {
+
+  .join-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .join-actions .join-entry,
+  .join-instagram {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+}
