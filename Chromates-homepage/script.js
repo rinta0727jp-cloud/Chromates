@@ -72,3 +72,138 @@ if (homeGalleryGrid) {
   }
 
 }
+
+// =========================
+// CALENDAR
+// =========================
+
+const calendarGrid =
+  document.getElementById("calendar-grid");
+
+if (calendarGrid) {
+
+  const now = new Date();
+
+  const year = now.getFullYear();
+  const month = now.getMonth();
+
+  const firstDay =
+    new Date(year, month, 1);
+
+  const lastDay =
+    new Date(year, month + 1, 0);
+
+  const daysInMonth =
+    lastDay.getDate();
+
+  const startDay =
+    (firstDay.getDay() + 6) % 7;
+
+
+  const dayNames = [
+    "MON",
+    "TUE",
+    "WED",
+    "THU",
+    "FRI",
+    "SAT",
+    "SUN"
+  ];
+
+
+  // 曜日
+  dayNames.forEach(day => {
+
+    const name =
+      document.createElement("div");
+
+    name.className =
+      "calendar-day-name";
+
+    name.textContent = day;
+
+    calendarGrid.appendChild(name);
+
+  });
+
+
+  // 月初の空欄
+  for (let i = 0; i < startDay; i++) {
+
+    const empty =
+      document.createElement("div");
+
+    empty.className =
+      "calendar-day empty";
+
+    calendarGrid.appendChild(empty);
+
+  }
+
+
+  // 日付
+  for (let day = 1; day <= daysInMonth; day++) {
+
+    const cell =
+      document.createElement("div");
+
+    cell.className =
+      "calendar-day";
+
+
+    const number =
+      document.createElement("span");
+
+    number.className =
+      "day-number";
+
+    number.textContent = day;
+
+    cell.appendChild(number);
+
+
+    // この日の予定を探す
+    const dateString =
+      `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+
+    const activity =
+      scheduleData.find(item =>
+        item.date === dateString
+      );
+
+
+    if (activity) {
+
+      cell.classList.add(
+        "activity-day"
+      );
+
+      const type =
+        activity.type.toLowerCase();
+
+      cell.classList.add(
+        `${type}-day`
+      );
+
+
+      const event =
+        document.createElement("div");
+
+      event.className =
+        "calendar-event";
+
+      event.innerHTML = `
+        <strong>${activity.type}</strong>
+        <span>${activity.time.split(" - ")[0]}</span>
+      `;
+
+      cell.appendChild(event);
+
+    }
+
+
+    calendarGrid.appendChild(cell);
+
+  }
+
+}
