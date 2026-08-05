@@ -2741,3 +2741,322 @@ a {
   }
 
 }
+
+/* =========================
+   SHOP PAGE
+========================= */
+
+.shop-page {
+  min-height: 70vh;
+  padding: 90px 20px 110px;
+  background: #ffffff;
+}
+
+.shop-inner {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+}
+
+
+/* SHOP HEADING */
+
+.shop-heading {
+  margin-bottom: 50px;
+}
+
+.shop-heading p {
+  margin-bottom: 12px;
+
+  color: #789537;
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.shop-heading h1 {
+  margin: 0;
+
+  color: #111;
+
+  font-size: clamp(48px, 7vw, 82px);
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+.shop-heading span {
+  display: block;
+
+  margin-top: 18px;
+
+  color: #777;
+
+  font-size: 14px;
+}
+
+
+/* PRE ORDER NOTICE */
+
+.shop-notice {
+  margin-bottom: 60px;
+  padding: 28px 32px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 40px;
+
+  background: #111;
+  color: white;
+}
+
+.shop-notice span {
+  color: #9abb50;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.shop-notice h2 {
+  margin-top: 4px;
+
+  font-size: 25px;
+}
+
+.shop-notice p {
+  color: #bbb;
+
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+
+/* GOODS GRID */
+
+.goods-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 38px 20px;
+}
+
+
+/* GOODS CARD */
+
+.goods-card {
+  display: block;
+
+  color: #111;
+  text-decoration: none;
+}
+
+.goods-image {
+  position: relative;
+
+  overflow: hidden;
+
+  aspect-ratio: 1 / 1;
+
+  background: #f2f3ef;
+}
+
+.goods-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 0.35s ease;
+}
+
+.goods-card:hover .goods-image img {
+  transform: scale(1.035);
+}
+
+
+/* PRE ORDER LABEL */
+
+.goods-status {
+  position: absolute;
+
+  top: 12px;
+  left: 12px;
+
+  padding: 6px 9px;
+
+  background: #789537;
+  color: white;
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: 1.2px;
+}
+
+
+/* GOODS INFO */
+
+.goods-info {
+  padding: 17px 2px 0;
+}
+
+.goods-name-en {
+  margin-bottom: 5px;
+
+  color: #789537;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+.goods-info h2 {
+  min-height: 46px;
+
+  margin-bottom: 8px;
+
+  color: #111;
+
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.goods-price {
+  display: block;
+
+  margin-bottom: 15px;
+
+  font-size: 18px;
+}
+
+.goods-view {
+  display: inline-block;
+
+  color: #777;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+  transition: 0.2s;
+}
+
+.goods-card:hover .goods-view {
+  color: #789537;
+  transform: translateX(3px);
+}
+
+
+/* =========================
+   SHOP TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+  .shop-page {
+    padding: 65px 20px 90px;
+  }
+
+  .goods-grid {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+  .shop-notice {
+    align-items: flex-start;
+    flex-direction: column;
+
+    gap: 15px;
+  }
+
+}
+
+
+/* =========================
+   SHOP MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .shop-page {
+    padding: 60px 15px 80px;
+  }
+
+  .shop-heading {
+    margin-bottom: 35px;
+  }
+
+  .shop-heading h1 {
+    font-size: 45px;
+    line-height: 1.05;
+  }
+
+  .shop-heading span {
+    font-size: 12px;
+  }
+
+
+  .shop-notice {
+    margin-bottom: 40px;
+    padding: 22px 20px;
+  }
+
+  .shop-notice h2 {
+    font-size: 21px;
+  }
+
+  .shop-notice p {
+    font-size: 11px;
+  }
+
+
+  .goods-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 32px 12px;
+  }
+
+
+  .goods-status {
+    top: 8px;
+    left: 8px;
+
+    padding: 5px 7px;
+
+    font-size: 7px;
+  }
+
+
+  .goods-info {
+    padding-top: 12px;
+  }
+
+  .goods-name-en {
+    font-size: 8px;
+  }
+
+  .goods-info h2 {
+    min-height: 42px;
+
+    font-size: 13px;
+  }
+
+  .goods-price {
+    margin-bottom: 10px;
+
+    font-size: 16px;
+  }
+
+  .goods-view {
+    font-size: 8px;
+  }
+
+}
