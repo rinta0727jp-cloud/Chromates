@@ -31,3 +31,44 @@ if (newsList) {
   }
 
 }
+
+// =========================
+// HOME GALLERY
+// =========================
+
+const homeGalleryGrid =
+  document.getElementById("home-gallery-grid");
+
+if (homeGalleryGrid) {
+
+  if (galleryData.length === 0) {
+
+    homeGalleryGrid.innerHTML = `
+      <p class="gallery-empty-home">
+        現在写真はありません。
+      </p>
+    `;
+
+  } else {
+
+    galleryData.slice(0, 6).forEach(photo => {
+
+      const link = document.createElement("a");
+
+      link.href = "gallery.html";
+      link.className = "home-gallery-item";
+
+      link.innerHTML = `
+        <img
+          src="${photo.image}"
+          alt="${photo.alt}"
+        >
+      `;
+
+      homeGalleryGrid.appendChild(link);
+
+    });
+
+  }
+
+}
