@@ -1,1 +1,304 @@
+<!DOCTYPE html>
+<html lang="ja">
 
+<head>
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>RESERVE | ChroMates</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="header">
+
+    <a href="index.html" class="site-logo">
+      <strong>ChroMates</strong>
+      <span>FUTSAL CIRCLE</span>
+    </a>
+
+    <nav class="nav">
+      <a href="index.html">HOME</a>
+      <a href="news.html">NEWS</a>
+      <a href="gallery.html">GALLERY</a>
+      <a href="shop.html">SHOP</a>
+      <a href="index.html#join">JOIN US</a>
+    </nav>
+
+  </header>
+
+
+  <main class="reserve-page">
+
+    <section class="reserve-inner">
+
+      <a href="shop.html" class="product-back">
+        ← BACK TO SHOP
+      </a>
+
+
+      <div class="reserve-heading">
+
+        <p>PRE-ORDER</p>
+
+        <h1>RESERVATION</h1>
+
+        <span>
+          ChroMatesオフィシャルグッズ予約フォーム
+        </span>
+
+      </div>
+
+
+      <div class="reserve-product">
+
+        <img
+          id="reserve-product-image"
+          src=""
+          alt=""
+        >
+
+        <div>
+
+          <p id="reserve-product-en"></p>
+
+          <h2 id="reserve-product-name"></h2>
+
+          <strong id="reserve-product-price"></strong>
+
+        </div>
+
+      </div>
+
+
+      <form
+        name="goods-reservation"
+        method="POST"
+        action="/reserve-thanks.html"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        class="reserve-form"
+      >
+
+        <input
+          type="hidden"
+          name="form-name"
+          value="goods-reservation"
+        >
+
+        <p style="display:none;">
+          <label>
+            入力しないでください
+            <input name="bot-field">
+          </label>
+        </p>
+
+
+        <!-- 商品 -->
+        <div class="form-group">
+
+          <label for="product">
+            商品
+          </label>
+
+          <input
+            type="text"
+            id="product"
+            name="product"
+            readonly
+          >
+
+        </div>
+
+
+        <!-- 名前 -->
+        <div class="form-group">
+
+          <label for="reserve-name">
+            名前
+            <span class="required">必須</span>
+          </label>
+
+          <input
+            type="text"
+            id="reserve-name"
+            name="name"
+            placeholder="山田 太郎"
+            required
+          >
+
+        </div>
+
+
+        <!-- メール -->
+        <div class="form-group">
+
+          <label for="reserve-email">
+            メールアドレス
+            <span class="required">必須</span>
+          </label>
+
+          <input
+            type="email"
+            id="reserve-email"
+            name="email"
+            placeholder="example@email.com"
+            required
+          >
+
+        </div>
+
+
+        <!-- 数量 -->
+        <div class="form-group">
+
+          <label for="quantity">
+            数量
+            <span class="required">必須</span>
+          </label>
+
+          <select
+            id="quantity"
+            name="quantity"
+            required
+          >
+            <option value="">選択してください</option>
+            <option value="1">1個</option>
+            <option value="2">2個</option>
+            <option value="3">3個</option>
+            <option value="4">4個</option>
+            <option value="5">5個</option>
+          </select>
+
+        </div>
+
+
+        <!-- サイズ -->
+        <div class="form-group">
+
+          <label for="size">
+            サイズ
+            <span class="optional">該当商品のみ</span>
+          </label>
+
+          <select
+            id="size"
+            name="size"
+          >
+            <option value="">サイズなし / 選択しない</option>
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+          </select>
+
+        </div>
+
+
+        <!-- 備考 -->
+        <div class="form-group">
+
+          <label for="note">
+            備考
+            <span class="optional">任意</span>
+          </label>
+
+          <textarea
+            id="note"
+            name="note"
+            rows="5"
+            placeholder="サイズ・受け渡しなど、ご希望があれば入力してください。"
+          ></textarea>
+
+        </div>
+
+
+        <p class="reserve-note">
+          ※こちらは予約受付フォームです。送信時点では購入確定・決済は行われません。
+          支払い方法や受け渡し方法については、予約確認後にご連絡します。
+        </p>
+
+
+        <button
+          type="submit"
+          class="entry-submit"
+        >
+          RESERVE →
+        </button>
+
+      </form>
+
+    </section>
+
+  </main>
+
+
+  <footer class="footer">
+
+    <div class="footer-logo">
+      <strong>ChroMates</strong>
+      <span>FUTSAL CIRCLE</span>
+    </div>
+
+    <p>© 2026 ChroMates</p>
+
+  </footer>
+
+
+  <script src="goods-data.js"></script>
+
+  <script>
+
+    const params =
+      new URLSearchParams(window.location.search);
+
+    const productId =
+      params.get("product");
+
+    const product =
+      goodsData.find(item => item.id === productId);
+
+
+    if (!product) {
+
+      window.location.href = "shop.html";
+
+    } else {
+
+      document.title =
+        `${product.jpName} 予約 | ChroMates`;
+
+      document.getElementById(
+        "reserve-product-image"
+      ).src = product.image;
+
+      document.getElementById(
+        "reserve-product-image"
+      ).alt = product.jpName;
+
+      document.getElementById(
+        "reserve-product-en"
+      ).textContent = product.name;
+
+      document.getElementById(
+        "reserve-product-name"
+      ).textContent = product.jpName;
+
+      document.getElementById(
+        "reserve-product-price"
+      ).textContent = product.price;
+
+      document.getElementById(
+        "product"
+      ).value =
+        `${product.jpName} / ${product.price}`;
+
+    }
+
+  </script>
+
+</body>
+</html>
