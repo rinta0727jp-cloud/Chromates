@@ -10,20 +10,11 @@ const goodsData = [
   },
 
   {
-    id: "acrylic-keyholder",
-    name: "ACRYLIC KEYHOLDER",
-    jpName: "アクリルキーホルダー",
-    price: "¥900",
-    image: "images/goods/acrylic_keyholder.jpg",
-    status: "PRE-ORDER"
-  },
-
-  {
-    id: "uniform-keyholder",
-    name: "UNIFORM KEYHOLDER",
-    jpName: "ユニフォームキーホルダー",
-    price: "¥1,200",
-    image: "images/goods/uniform_keyholder.jpg",
+    id: "tshirt",
+    name: "OFFICIAL T-SHIRT",
+    jpName: "オフィシャルTシャツ",
+    price: "¥3,500",
+    image: "images/goods/tshirt.jpg",
     status: "PRE-ORDER"
   },
 
@@ -37,47 +28,20 @@ const goodsData = [
   },
 
   {
-    id: "sticker-set",
-    name: "STICKER SET",
-    jpName: "ステッカーセット",
-    price: "¥600",
-    image: "images/goods/sticker_set.jpg",
-    status: "PRE-ORDER"
-  },
-
-  {
-    id: "rubber-keyholder",
-    name: "RUBBER KEYHOLDER",
-    jpName: "ラバーキーホルダー",
-    price: "¥1,000",
-    image: "images/goods/rubber_keyholder.jpg",
-    status: "PRE-ORDER"
-  },
-
-  {
-    id: "muffler-towel",
-    name: "MUFFLER TOWEL",
-    jpName: "マフラータオル",
-    price: "¥2,200",
-    image: "images/goods/muffler_towel.jpg",
-    status: "PRE-ORDER"
-  },
-
-  {
-    id: "tshirt",
-    name: "OFFICIAL T-SHIRT",
-    jpName: "オフィシャルTシャツ",
-    price: "¥3,500",
-    image: "images/goods/tshirt.jpg",
-    status: "PRE-ORDER"
-  },
-
-  {
     id: "cap",
     name: "OFFICIAL CAP",
     jpName: "オフィシャルキャップ",
     price: "¥3,300",
     image: "images/goods/cap.jpg",
+    status: "PRE-ORDER"
+  },
+
+  {
+    id: "face-towel",
+    name: "FACE TOWEL",
+    jpName: "フェイスタオル",
+    price: "¥1,800",
+    image: "images/goods/face_towel.jpg",
     status: "PRE-ORDER"
   },
 
@@ -100,11 +64,47 @@ const goodsData = [
   },
 
   {
+    id: "acrylic-keyholder",
+    name: "ACRYLIC KEYHOLDER",
+    jpName: "アクリルキーホルダー",
+    price: "¥900",
+    image: "images/goods/acrylic_keyholder.jpg",
+    status: "PRE-ORDER"
+  },
+
+  {
+    id: "uniform-keyholder",
+    name: "UNIFORM KEYHOLDER",
+    jpName: "ユニフォームキーホルダー",
+    price: "¥1,200",
+    image: "images/goods/uniform_keyholder.jpg",
+    status: "PRE-ORDER"
+  },
+
+  {
+    id: "rubber-keyholder",
+    name: "RUBBER KEYHOLDER",
+    jpName: "ラバーキーホルダー",
+    price: "¥1,000",
+    image: "images/goods/rubber_keyholder.jpg",
+    status: "PRE-ORDER"
+  },
+
+  {
     id: "acrylic-stand",
     name: "ACRYLIC STAND",
     jpName: "アクリルスタンド",
     price: "¥1,500",
     image: "images/goods/acrylic_stand.jpg",
+    status: "PRE-ORDER"
+  },
+
+  {
+    id: "sticker-set",
+    name: "STICKER SET",
+    jpName: "ステッカーセット",
+    price: "¥600",
+    image: "images/goods/sticker_set.jpg",
     status: "PRE-ORDER"
   },
 
@@ -141,6 +141,15 @@ const goodsData = [
     jpName: "ミニフラッグ",
     price: "¥1,500",
     image: "images/goods/mini_flag.jpg",
+    status: "PRE-ORDER"
+  },
+
+  {
+    id: "big-flag",
+    name: "BIG FLAG",
+    jpName: "ビッグフラッグ",
+    price: "¥3,500",
+    image: "images/goods/big_flag.jpg",
     status: "PRE-ORDER"
   }
 
