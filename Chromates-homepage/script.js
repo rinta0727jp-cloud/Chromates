@@ -241,6 +241,16 @@ const sortedScheduleData = [...scheduleData].sort(
   (a, b) => new Date(a.date) - new Date(b.date)
 );
 
+const today = new Date();
+today.setHours(0, 0, 0, 0);
+
+const upcomingScheduleData = sortedScheduleData.filter(item => {
+  const eventDate = new Date(item.date);
+  eventDate.setHours(0, 0, 0, 0);
+
+  return eventDate >= today;
+});
+
 
 // =========================
 // NEXT ACTIVITY
@@ -251,7 +261,7 @@ const nextActivity =
 
 if (nextActivity) {
 
-  if (sortedScheduleData.length === 0) {
+ if (upcomingScheduleData.length === 0) {
 
     nextActivity.innerHTML = `
       <p class="next-label">NEXT ACTIVITY</p>
@@ -273,7 +283,7 @@ if (nextActivity) {
 
   } else {
 
-    const next = sortedScheduleData[0];
+    const next = upcomingScheduleData[0];
 
     const date = new Date(next.date);
 
@@ -316,7 +326,7 @@ const scheduleList =
 
 if (scheduleList) {
 
-  if (sortedScheduleData.length === 0) {
+  if (upcomingScheduleData.length === 0) {
 
     scheduleList.innerHTML = `
       <div class="schedule-empty">
@@ -329,8 +339,8 @@ if (scheduleList) {
 
   } else {
 
-    sortedScheduleData
-      .slice(0, 3)
+    upcomingScheduleData
+  .slice(0, 3)
       .forEach(item => {
 
         const date =
