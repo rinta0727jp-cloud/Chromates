@@ -1,10 +1,15 @@
 export default {
   async formSubmitted(event) {
 
-    // グッズ予約フォーム以外は処理しない
-    if (event.form?.name && event.form.name !== "goods-reservation") {
-      return;
-    }
+   const formName =
+  event.form?.name ||
+  event.data?.["form-name"] ||
+  event.data?.form_name;
+
+if (formName !== "entry") {
+  console.log("入会フォームではないため終了:", formName);
+  return;
+}
 
     const name = event.data?.name;
     const email = event.data?.email;
