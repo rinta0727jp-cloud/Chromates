@@ -417,51 +417,6 @@ if (scheduleList) {
 }
 
 
-// =========================
-// CALENDAR
-// =========================
-
-const calendarGrid =
-  document.getElementById("calendar-grid");
-
-if (calendarGrid) {
-
-  const now = new Date();
-
-  const year =
-    now.getFullYear();
-
-  const month =
-    now.getMonth();
-
-
-  // 月表示
-  const calendarMonth =
-    document.getElementById("calendar-month");
-
-  const monthNamesFull = [
-    "JANUARY",
-    "FEBRUARY",
-    "MARCH",
-    "APRIL",
-    "MAY",
-    "JUNE",
-    "JULY",
-    "AUGUST",
-    "SEPTEMBER",
-    "OCTOBER",
-    "NOVEMBER",
-    "DECEMBER"
-  ];
-
-  if (calendarMonth) {
-
-    calendarMonth.innerHTML = `
-      ${monthNamesFull[month]}
-      <span>${year}</span>
-    `;
-
-  }
 
 
   const firstDay =
