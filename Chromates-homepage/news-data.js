@@ -1,7 +1,7 @@
 const newsData = [
    {
     date: "2026.08.09",
-    title: "野球部門 所沢大会に参加しました",
+    title: "ChroMates番外編！野球部門が所沢大会に出場、予選2位で決勝トーナメント進出！",
     url: "news/baseball-tokorozawa.html"
   },
   {
